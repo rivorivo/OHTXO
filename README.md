@@ -1,2 +1,2 @@
 # OHTXO
-3x3Ristinolla
+harjoitustyo3x3Ristinolla

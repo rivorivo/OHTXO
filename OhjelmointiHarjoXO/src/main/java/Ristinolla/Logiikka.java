@@ -57,10 +57,13 @@ public class Logiikka {
         if (pelilauta[ruutu] != null) {
             throw new IllegalArgumentException("Ruutu ei ole vapaa.");
         }
-        if (getVuoro().equals("X")) {
-            this.pelilauta[ruutu] = "X";
-        } else if (getVuoro().equals("0")) {
-            this.pelilauta[ruutu] = "0";
+        switch (getVuoro()) {
+            case "X":
+                this.pelilauta[ruutu] = "X";
+                break;
+            case "0":
+                this.pelilauta[ruutu] = "0";
+                break;
         }
 
     }

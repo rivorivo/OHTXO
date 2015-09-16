@@ -1,6 +1,5 @@
 
-
-import Ristinolla.Logiikka;
+package Ristinolla;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -13,7 +12,7 @@ import org.junit.Test;
  * @author rivorivo
  */
 public class LogiikkaTest {
-    
+ 
     public LogiikkaTest() {
     }
     

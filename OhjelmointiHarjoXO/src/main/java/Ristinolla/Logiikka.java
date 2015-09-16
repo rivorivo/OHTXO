@@ -164,9 +164,8 @@ public class Logiikka {
      * @return vuorossa oleva merkki
      */
     public String getVuoro() {
-        if(this.vuoro==0){
-            return null;
-        } else if (this.vuoro % 2 == 0) {
+
+            if (this.vuoro % 2 != 0) {
             return "0";
         }else{
         return "X";

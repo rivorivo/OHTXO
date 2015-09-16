@@ -6,7 +6,7 @@
 
 package Ristinolla;
 
-import Käyttöliittymä.RistinollaUI;
+import Käyttöliittymä.UI;
 import java.util.Arrays;
 import javax.swing.SwingUtilities;
 
@@ -18,18 +18,11 @@ import javax.swing.SwingUtilities;
 public class Ristinolla {
     public static void main(String[] args) {
    
-//        String[] pelilauta = new String[0];
-//  
-//        Logiikka logiikka = new Logiikka(pelilauta);
-//        logiikka.uusiPeli();
-//        logiikka.teeSiirto(0);
-//        logiikka.teeSiirto(4);
-//        logiikka.teeSiirto(1);
-//        logiikka.teeSiirto(5);        
-//        logiikka.teeSiirto(2);
-// 
-//        logiikka.loppumisenTarkistus();
-//        System.out.println(logiikka.getVoittaja());
-//       // System.out.println(logiikka.getVoittaja());
+        String[] pelilauta = new String[0];
+  
+        Logiikka logiikka = new Logiikka(pelilauta);
+       
+ 
+       
 }
 }

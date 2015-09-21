@@ -53,16 +53,17 @@ public class Logiikka {
      */
     public void teeSiirto(int ruutu) {
 
-        this.vuoro++;
+        
         if (pelilauta[ruutu] != null) {
             throw new IllegalArgumentException("Ruutu ei ole vapaa.");
         }
+        this.vuoro++;
         switch (getVuoro()) {
             case "X":
-                this.pelilauta[ruutu] = "X";
+                this.pelilauta[ruutu] = "0";
                 break;
             case "0":
-                this.pelilauta[ruutu] = "0";
+                this.pelilauta[ruutu] = "X";
                 break;
         }
 
@@ -117,7 +118,7 @@ public class Logiikka {
         }
 
         if (this.vuoro == this.pelilauta.length && this.voittaja == null) {
-            this.voittaja = "tasan";
+            this.voittaja = "tasapeli";
         }
 
     }
@@ -135,7 +136,7 @@ public class Logiikka {
             case "0":
                 this.voitotNolla++;
                 break;
-            case "tasan":
+            case "tasapeli":
                 this.tasapelit++;
                 break;
         }

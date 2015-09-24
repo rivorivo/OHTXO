@@ -53,7 +53,7 @@ public class LogiikkaTest {
          logiikka.teeSiirto(2);
          logiikka.teeSiirto(0);
          logiikka.teeSiirto(1);
-         assertEquals(logiikka.getVuoro(),"X");
+         assertEquals(logiikka.getVuoro(),"0");
      }
      @Test
      public void laskeeVuorot2(){
@@ -65,7 +65,7 @@ public class LogiikkaTest {
          logiikka.teeSiirto(4);
          logiikka.teeSiirto(5);
          logiikka.teeSiirto(6);
-         assertEquals(logiikka.getVuoro(),"0");
+         assertEquals(logiikka.getVuoro(),"X");
      }
      @Test
      public void uusiPeliNollaaVuoron(){
@@ -75,7 +75,7 @@ public class LogiikkaTest {
         logiikka.teeSiirto(0);
         logiikka.teeSiirto(1);
         logiikka.uusiPeli();
-        assertEquals(logiikka.getVuoro(),null);
+        assertEquals(logiikka.getVuoro(),"X");
      }
      @Test
      public void useammatSiirrotToimii(){
@@ -104,7 +104,7 @@ public class LogiikkaTest {
         logiikka.teeSiirto(3);
         logiikka.teeSiirto(8);
         logiikka.voittikoJoku();
-        assertEquals(logiikka.getVoittaja(),"tasan");
+        assertEquals(logiikka.getVoittaja(),"tasapeli");
      }
      
     @Test

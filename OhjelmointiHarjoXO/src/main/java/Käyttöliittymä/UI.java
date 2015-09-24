@@ -254,6 +254,7 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
+     * toimii main-luokkana
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -282,6 +283,7 @@ public class UI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new UI().setVisible(true);
             }
@@ -300,7 +302,10 @@ public class UI extends javax.swing.JFrame {
          
         }
     }
-    
+    /*
+    *aloittaa uuden pelin ja päivittää voitot
+    *
+    */
     private void uusiPeli(){
         peli.uusiPeli();
         paivitaVoitot();

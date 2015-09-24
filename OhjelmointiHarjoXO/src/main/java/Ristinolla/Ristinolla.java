@@ -6,9 +6,6 @@
 
 package Ristinolla;
 
-import Käyttöliittymä.UI;
-import java.util.Arrays;
-import javax.swing.SwingUtilities;
 
 
 /**
@@ -18,9 +15,9 @@ import javax.swing.SwingUtilities;
 public class Ristinolla {
     public static void main(String[] args) {
    
-        String[] pelilauta = new String[0];
-  
-        Logiikka logiikka = new Logiikka(pelilauta);
+       String[] pelilauta = new String[0];
+ 
+       Logiikka logiikka = new Logiikka(pelilauta);
        
  
        

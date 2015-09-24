@@ -1,7 +1,7 @@
 
 package Ristinolla;
 
-import java.util.Arrays;
+
 
 /**
  *
@@ -53,17 +53,16 @@ public class Logiikka {
      */
     public void teeSiirto(int ruutu) {
 
+
         
-        if (pelilauta[ruutu] != null) {
-            throw new IllegalArgumentException("Ruutu ei ole vapaa.");
-        }
-        this.vuoro++;
         switch (getVuoro()) {
             case "X":
-                this.pelilauta[ruutu] = "0";
+                this.pelilauta[ruutu] = "X";
+                this.vuoro++;
                 break;
             case "0":
-                this.pelilauta[ruutu] = "X";
+                this.pelilauta[ruutu] = "0";
+                this.vuoro++;
                 break;
         }
 
@@ -186,6 +185,7 @@ public class Logiikka {
     }
 
     /**
+     * getterit
      * @return voitot/tasapelit
      */
        

@@ -27,3 +27,14 @@ Käytetty aika n.5min
 
 Tein koodipalautteen pohjalta muutoksia, mm. poistin parit ylimääräiset importit ja korjasin väärän voittajan ilmoittamisen bugin. Poistin myös Logiikka-luokkasta tarpeettomaksi jääneitä rivejä ja päivitin luokkakaavion. Muokkasin testejä toimiviksi ja päivitin Pit-raportin. Logiikkaluokan testien rivikattavuus on nyt 85% ja mutanteista tapettu 74%. Kommentoin myös vähän UI-luokkaa JavaDocilla (Logiikka-luokkaan sen tein jo aikaisemmin).
 Käytetty aika n.5h
+
+28.9.2015
+
+Loin tekoälyn, joka osaa blokata melkein kaikki vastustajan kahden merkin rivit ja siirtää voittavan siirron oman kahden merkin rivinsä perään.
+Käytetty aika n.4h
+
+1.-2.10.2015
+
+"Tekoaly"-luokan tekeminen tiputti testikattavuuden alle 50% joten aloin tekemään testejä luokalle. luokassa on nyt käytännössä testattu kaikki oleellinen, vain kaikkien eri voitto- ja häviöyhdistelmien tunnistuksen testaus on tekemättä ja se tekee rivikattavuudesta alhaisen. Laitoin tekoälyn siirtämään keskimmäiseen ruutuun(jos se on vapaana eikä tarvitse blokata mitään tai saa voittoa), jotta sen mahdollisuudet paranisivat hieman. Tekoälyn saa kätevästi "pois käytöstä" poistamalla yhden rivin, joten aion liittää kyseisen ominaisuuden käyttöliittymään, kun ehdin. 
+Lisäksi päivitin luokkakaavion, tein kaksi sekvenssikaaviota, laitoin javadocit kuntoon ja päivitin pit-raportin. 
+Käytetty aika n.8h

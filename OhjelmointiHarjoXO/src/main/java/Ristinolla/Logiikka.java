@@ -179,6 +179,7 @@ public class Logiikka {
      * Parametrin ruudussa olevan merkin palautus.
      *
      * @param ruutu
+     * @return 
      */
     public String getMerkkiRuudussa(int ruutu) {
         return this.pelilauta[ruutu];

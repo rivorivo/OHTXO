@@ -94,15 +94,29 @@ public class TekoalyTest {
      * Test of siirto method, of class Tekoaly.
      */
     @Test
-    public void blokkaaJoitakin() {
+    public void blokkaaJoitakin1() {
         peli.teeSiirto(0);
         peli.teeSiirto(4);
         peli.teeSiirto(1);
         assertEquals(tekis.siirto(),2);
     }
+     @Test
+    public void blokkaaJoitakin2() {
+        peli.teeSiirto(4);
+        peli.teeSiirto(2);
+        peli.teeSiirto(3);
+        assertEquals(tekis.siirto(),5);
+    }
+     @Test
+    public void blokkaaJoitakin3() {
+        peli.teeSiirto(8);
+        peli.teeSiirto(3);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),2);
+    }
     
     @Test
-    public void hyokkaa(){
+    public void hyokkaa1(){
         peli.teeSiirto(0);
         peli.teeSiirto(1);
         peli.teeSiirto(2);
@@ -110,28 +124,25 @@ public class TekoalyTest {
         peli.teeSiirto(3);
         assertEquals(tekis.siirto(),7);
     }
+      @Test
+    public void hyokkaa2(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(0);
+        peli.teeSiirto(8);
+        peli.teeSiirto(2);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),1);
+    }
+      @Test
+    public void hyokkaa3(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(4);
+        peli.teeSiirto(8);
+        peli.teeSiirto(2);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),6);
+    }
     
    
-//        System.out.println("siirto");
-//        Tekoaly instance = null;
-//        int expResult = 0;
-//        int result = instance.siirto();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of blokkaus method, of class Tekoaly.
-//     */
-//    @Test
-//    public void testBlokkaus() {
-//        System.out.println("blokkaus");
-//        Tekoaly instance = null;
-//        int expResult = 0;
-//        int result = instance.blokkaus();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+
 }

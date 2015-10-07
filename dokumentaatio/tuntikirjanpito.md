@@ -38,3 +38,8 @@ Käytetty aika n.4h
 "Tekoaly"-luokan tekeminen tiputti testikattavuuden alle 50% joten aloin tekemään testejä luokalle. luokassa on nyt käytännössä testattu kaikki oleellinen, vain kaikkien eri voitto- ja häviöyhdistelmien tunnistuksen testaus on tekemättä ja se tekee rivikattavuudesta alhaisen. Laitoin tekoälyn siirtämään keskimmäiseen ruutuun(jos se on vapaana eikä tarvitse blokata mitään tai saa voittoa), jotta sen mahdollisuudet paranisivat hieman. Tekoälyn saa kätevästi "pois käytöstä" poistamalla yhden rivin, joten aion liittää kyseisen ominaisuuden käyttöliittymään, kun ehdin. 
 Lisäksi päivitin luokkakaavion, tein kaksi sekvenssikaaviota, laitoin javadocit kuntoon ja päivitin pit-raportin. 
 Käytetty aika n.8h
+
+7.10.2015
+
+Tein tekoälyn päälle ja pois vaihtavan napin ja "uusi peli" -painikkeen. Tein myös uuden sekvenssikaavion tekoälyn siirrosta. Päivitin ja lisäsin myös Javadoceja ja testejä.
+Käytetty aika n.6h

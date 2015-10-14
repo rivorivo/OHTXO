@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Käyttöliittymä;
+
 import Ristinolla.Logiikka;
 import Ristinolla.Tekoaly;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author rivorivo
@@ -21,20 +22,20 @@ public class UI extends javax.swing.JFrame {
     private final Tekoaly AI;
     String[] pelilauta = new String[8];
     private boolean aiOn;
-    
+
     public UI() {
-        this.peli= new Logiikka(pelilauta);              
+        this.peli = new Logiikka(pelilauta);
         peli.uusiPeli();
-        this.AI=new Tekoaly(peli);  
+        this.AI = new Tekoaly(peli);
         initComponents();
-        voitotBar.setText("Voitot X: "+peli.getVoitotRisti()+" Voitot 0: "+peli.getVoitotNolla()+" Tasapelit: "+peli.getTasapelit());
-        aiOn=false;
+        voitotBar.setText("Voitot X: " + peli.getVoitotRisti() + " Voitot 0: " + peli.getVoitotNolla() + " Tasapelit: " + peli.getTasapelit());
+        aiOn = false;
     }
 
     /**
      * graafisen pelilaudan ja painikkeiden alustaminen
      *
-     * 
+     *
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -227,103 +228,107 @@ public class UI extends javax.swing.JFrame {
 
     /**
      * jButtonien toimintojen määritys siirtojen tekemistä varten
-     * @param evt 
+     *
+     * @param evt
      */
-    
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-     jButton6.setText(peli.getVuoro());
-     jButton6.setEnabled(false);
-     jButtonKlikkaus(5);   
-     
+        jButton6.setText(peli.getVuoro());
+        jButton6.setEnabled(false);
+        jButtonKlikkaus(5);
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-     jButton7.setText(peli.getVuoro());
-     jButton7.setEnabled(false);
-     jButtonKlikkaus(6);   
-     
+        jButton7.setText(peli.getVuoro());
+        jButton7.setEnabled(false);
+        jButtonKlikkaus(6);
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-     jButton8.setText(peli.getVuoro());
-     jButton8.setEnabled(false);
-     jButtonKlikkaus(7);
-     
+        jButton8.setText(peli.getVuoro());
+        jButton8.setEnabled(false);
+        jButtonKlikkaus(7);
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-     jButton9.setText(peli.getVuoro());
-     jButton9.setEnabled(false);
-     jButtonKlikkaus(8);     
-     
+        jButton9.setText(peli.getVuoro());
+        jButton9.setEnabled(false);
+        jButtonKlikkaus(8);
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     jButton1.setText(peli.getVuoro());
-     jButton1.setEnabled(false);
-     jButtonKlikkaus(0);     
-     
+        jButton1.setText(peli.getVuoro());
+        jButton1.setEnabled(false);
+        jButtonKlikkaus(0);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    jButton2.setText(peli.getVuoro());
-    jButton2.setEnabled(false);
-    jButtonKlikkaus(1);    
-    
+        jButton2.setText(peli.getVuoro());
+        jButton2.setEnabled(false);
+        jButtonKlikkaus(1);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-     jButton3.setText(peli.getVuoro());
-     jButton3.setEnabled(false);
-     jButtonKlikkaus(2);   
-     
+        jButton3.setText(peli.getVuoro());
+        jButton3.setEnabled(false);
+        jButtonKlikkaus(2);
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     jButton4.setText(peli.getVuoro());
-     jButton4.setEnabled(false);
-     jButtonKlikkaus(3);     
-     
+        jButton4.setText(peli.getVuoro());
+        jButton4.setEnabled(false);
+        jButtonKlikkaus(3);
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-     jButton5.setText(peli.getVuoro());
-     jButton5.setEnabled(false);
-     jButtonKlikkaus(4);  
-     
+        jButton5.setText(peli.getVuoro());
+        jButton5.setEnabled(false);
+        jButtonKlikkaus(4);
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
-     * jToggleButton laittaa AI:n päälle ja pois ja ilmoittaa siitä. 
-     * Ai tekee siirron, jos laittaa päälle 0:n vuorolla.
-     * @param evt 
+     * jToggleButton laittaa AI:n päälle ja pois ja ilmoittaa siitä. Ai tekee
+     * siirron, jos laittaa päälle 0:n vuorolla.
+     *
+     * @param evt
      */
-    
+
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        if(aiOn==false){
-            aiOn=true;
+        if (aiOn == false) {
+            aiOn = true;
             jToggleButton1.setText("AI on päällä");
             JOptionPane.showMessageDialog(rootPane, "AI ohjaa 0:a");
             aiKlikkaus();
-        }else{
-            aiOn=false;
+        } else {
+            aiOn = false;
             jToggleButton1.setText("AI on pois");
             JOptionPane.showMessageDialog(rootPane, "AI pois päältä");
         }
-      
+
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-/**
- * aloittaa uuden pelin
- * @param evt 
- */
+    /**
+     * aloittaa uuden pelin
+     *
+     * @param evt
+     */
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-    
+
         uusiPeli();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * toimii main-luokkana
+     *
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -351,118 +356,118 @@ public class UI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-                  
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new UI().setVisible(true);                
+                new UI().setVisible(true);
             }
         });
     }
-    
-    
+
     /**
      * käskee logiikkaluokan siirtoa ja loppumisen tarkistusta. Jos peli loppu,
-     * ilmoittaa voittajan viesti-ikkunassa. Jos peli jatkuu ja AI on päällä, 
+     * ilmoittaa voittajan viesti-ikkunassa. Jos peli jatkuu ja AI on päällä,
      * kutsuu aiKlikkaus-metodia.
-     * @param ruutu 
+     *
+     * @param ruutu
      */
-    private void jButtonKlikkaus(int ruutu){
+    private void jButtonKlikkaus(int ruutu) {
         peli.teeSiirto(ruutu);
         peli.loppumisenTarkistus();
-        if(peli.onkoLoppu()){
-            if(peli.getVoittaja().equals("tasapeli")){
+        if (peli.onkoLoppu()) {
+            if (peli.getVoittaja().equals("tasapeli")) {
                 JOptionPane.showMessageDialog(rootPane, "Tasapeli");
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Peli loppu, voittaja: "+peli.getVoittaja());
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Peli loppu, voittaja: " + peli.getVoittaja());
             }
-            uusiPeli();         
-        }else if(aiOn==true){
+            uusiPeli();
+        } else if (aiOn == true) {
             aiKlikkaus();
         }
     }
 
-    
     /**
      * Jos vuoro on "0", asettaa merkin sopivaan paikkaan.
      */
-    private void aiKlikkaus(){
-        if (peli.getVuoro().equals("0")){
-        int ruutu=AI.siirto();
-       
-        if (ruutu == 0) {
-            jButton1.setText(peli.getVuoro());
-            jButton1.setEnabled(false);
-        } else if (ruutu == 1) {
-            jButton2.setText(peli.getVuoro());
-            jButton2.setEnabled(false);
-        } else if (ruutu == 2) {
-            jButton3.setText(peli.getVuoro());
-            jButton3.setEnabled(false);
-        } else if (ruutu == 3) {
-            jButton4.setText(peli.getVuoro());
-            jButton4.setEnabled(false);
-        } else if (ruutu == 4) {
-            jButton5.setText(peli.getVuoro());
-            jButton5.setEnabled(false);
-        } else if (ruutu == 5) {
-            jButton6.setText(peli.getVuoro());
-            jButton6.setEnabled(false);
-        } else if (ruutu == 6) {
-            jButton7.setText(peli.getVuoro());
-            jButton7.setEnabled(false);
-        } else if (ruutu == 7) {
-            jButton8.setText(peli.getVuoro());
-            jButton8.setEnabled(false);
-        } else if (ruutu == 8) {
-            jButton9.setText(peli.getVuoro());
-            jButton9.setEnabled(false);
+    private void aiKlikkaus() {
+        if (peli.getVuoro().equals("0")) {
+            int ruutu = AI.hyokkaysSiirto();
+
+            if (ruutu == 0) {
+                jButton1.setText(peli.getVuoro());
+                jButton1.setEnabled(false);
+            } else if (ruutu == 1) {
+                jButton2.setText(peli.getVuoro());
+                jButton2.setEnabled(false);
+            } else if (ruutu == 2) {
+                jButton3.setText(peli.getVuoro());
+                jButton3.setEnabled(false);
+            } else if (ruutu == 3) {
+                jButton4.setText(peli.getVuoro());
+                jButton4.setEnabled(false);
+            } else if (ruutu == 4) {
+                jButton5.setText(peli.getVuoro());
+                jButton5.setEnabled(false);
+            } else if (ruutu == 5) {
+                jButton6.setText(peli.getVuoro());
+                jButton6.setEnabled(false);
+            } else if (ruutu == 6) {
+                jButton7.setText(peli.getVuoro());
+                jButton7.setEnabled(false);
+            } else if (ruutu == 7) {
+                jButton8.setText(peli.getVuoro());
+                jButton8.setEnabled(false);
+            } else if (ruutu == 8) {
+                jButton9.setText(peli.getVuoro());
+                jButton9.setEnabled(false);
+            }
+
+            jButtonKlikkaus(ruutu);
         }
-        
-       jButtonKlikkaus(ruutu);
-       }
     }
     /*
-    *aloittaa uuden pelin ja päivittää voitot
-    *
-    */
-    private void uusiPeli(){
+     *aloittaa uuden pelin ja päivittää voitot
+     *
+     */
+
+    private void uusiPeli() {
         peli.uusiPeli();
         paivitaVoitot();
         nollaaPelilauta();
     }
+
     /**
      * Päivittää voittojen määrän käyttöliittymän ikkunan alalaitaan.
      */
-    private void paivitaVoitot(){
-     voitotBar.setText("Voitot X: "+peli.getVoitotRisti()+" Voitot 0: "+peli.getVoitotNolla()+" Tasapelit: "+peli.getTasapelit());   
+    private void paivitaVoitot() {
+        voitotBar.setText("Voitot X: " + peli.getVoitotRisti() + " Voitot 0: " + peli.getVoitotNolla() + " Tasapelit: " + peli.getTasapelit());
     }
-    
+
     /**
      * nollaa pelilaudan nappulat.
      */
-    private void nollaaPelilauta(){
-                     
-         jButton1.setText(null);
-         jButton1.setEnabled(true);
-         jButton2.setText(null);
-         jButton2.setEnabled(true);
-         jButton3.setText(null);
-         jButton3.setEnabled(true);
-         jButton4.setText(null);
-         jButton4.setEnabled(true);
-         jButton5.setText(null);
-         jButton5.setEnabled(true);
-         jButton6.setText(null);
-         jButton6.setEnabled(true);
-         jButton7.setText(null);
-         jButton7.setEnabled(true);
-         jButton8.setText(null);
-         jButton8.setEnabled(true);
-         jButton9.setText(null);
-         jButton9.setEnabled(true);
-        }
-    
+    private void nollaaPelilauta() {
+
+        jButton1.setText(null);
+        jButton1.setEnabled(true);
+        jButton2.setText(null);
+        jButton2.setEnabled(true);
+        jButton3.setText(null);
+        jButton3.setEnabled(true);
+        jButton4.setText(null);
+        jButton4.setEnabled(true);
+        jButton5.setText(null);
+        jButton5.setEnabled(true);
+        jButton6.setText(null);
+        jButton6.setEnabled(true);
+        jButton7.setText(null);
+        jButton7.setEnabled(true);
+        jButton8.setText(null);
+        jButton8.setEnabled(true);
+        jButton9.setText(null);
+        jButton9.setEnabled(true);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -480,5 +485,5 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel voitotBar;
     // End of variables declaration//GEN-END:variables
-    
+
 }

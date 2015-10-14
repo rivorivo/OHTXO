@@ -1,7 +1,4 @@
-
 package Ristinolla;
-
-
 
 /**
  *
@@ -53,8 +50,6 @@ public class Logiikka {
      */
     public void teeSiirto(int ruutu) {
 
-
-        
         switch (getVuoro()) {
             case "X":
                 this.pelilauta[ruutu] = "X";
@@ -77,34 +72,34 @@ public class Logiikka {
         if (this.vuoro >= 5) {
 
             for (int i = 0; i < 3; i++) {
-                
-                if (this.pelilauta[i] != null){
-                String mesta = this.pelilauta[i];
 
-                if (mesta.equals(this.pelilauta[i + 3]) && mesta.equals(this.pelilauta[i + 6])) {
-                    this.voittaja = mesta;
-                }
+                if (this.pelilauta[i] != null) {
+                    String mesta = this.pelilauta[i];
+
+                    if (mesta.equals(this.pelilauta[i + 3]) && mesta.equals(this.pelilauta[i + 6])) {
+                        this.voittaja = mesta;
+                    }
                 }
             }
 
             for (int i = 0; i < 9; i = i + 3) {
-                    if (this.pelilauta[i] != null){
-                String mesta = this.pelilauta[i];
+                if (this.pelilauta[i] != null) {
+                    String mesta = this.pelilauta[i];
 
-                if (mesta.equals(this.pelilauta[i + 1]) && mesta.equals(this.pelilauta[i + 2])) {
-                    this.voittaja = mesta;
-                }
+                    if (mesta.equals(this.pelilauta[i + 1]) && mesta.equals(this.pelilauta[i + 2])) {
+                        this.voittaja = mesta;
                     }
+                }
             }
 
             if (this.pelilauta[0] != null) {
-                 
+
                 String mesta = this.pelilauta[0];
 
                 if (mesta.equals(this.pelilauta[4]) && mesta.equals(this.pelilauta[8])) {
                     this.voittaja = mesta;
                 }
-                    
+
             }
 
             if (this.pelilauta[2] != null) {
@@ -168,14 +163,14 @@ public class Logiikka {
      */
     public String getVuoro() {
 
-            if (this.vuoro % 2 != 0) {
+        if (this.vuoro % 2 != 0) {
             return "0";
-        }else{
-        return "X";
+        } else {
+            return "X";
         }
     }
-    
-    public int getMoneskoVuoro(){
+
+    public int getMoneskoVuoro() {
         return this.vuoro;
     }
 
@@ -183,7 +178,7 @@ public class Logiikka {
      * Parametrin ruudussa olevan merkin palautus.
      *
      * @param ruutu
-     * @return 
+     * @return
      */
     public String getMerkkiRuudussa(int ruutu) {
         return this.pelilauta[ruutu];
@@ -191,9 +186,9 @@ public class Logiikka {
 
     /**
      * getterit
+     *
      * @return voitot/tasapelit
      */
-       
     public int getVoitotNolla() {
         return this.voitotNolla;
     }
@@ -205,13 +200,14 @@ public class Logiikka {
     public int getTasapelit() {
         return this.tasapelit;
     }
+
     /**
      * Palauttaa voittajan tai tasapelin.
+     *
      * @return voittaja
      */
-    public String getVoittaja(){
+    public String getVoittaja() {
         return this.voittaja;
     }
-       
 
 }

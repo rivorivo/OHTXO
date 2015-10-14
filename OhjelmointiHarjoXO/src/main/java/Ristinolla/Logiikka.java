@@ -174,6 +174,10 @@ public class Logiikka {
         return "X";
         }
     }
+    
+    public int getMoneskoVuoro(){
+        return this.vuoro;
+    }
 
     /**
      * Parametrin ruudussa olevan merkin palautus.

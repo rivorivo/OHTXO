@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Ristinolla;
-
 import java.util.Random;
 
 /**
@@ -165,12 +164,67 @@ public class Tekoaly {
             return 2;
         } else if(palauta(4).equals("")){
             return 4;
-        }else {
-           // int rdm = satunnainen();
-           // System.out.println(rdm);
-           // return rdm;
+        } else {
+            int ennakko=ennakoivaPuolustus();
+            if(ennakko!=-1){
+                return ennakko;
+            }
             return satunnainen();
         }
     
+    }
+    
+    public int ennakoivaPuolustus(){
+        if(palauta(4).equals("0")&&((palauta(0).equals("X")&&palauta(8).equals("X"))||(palauta(6).equals("X")&&palauta(2).equals("X")))){
+            if(palauta(1).equals("")){
+                return 1;
+            }else if (palauta(3).equals("")){
+                return 3;
+            }else if (palauta(5).equals("")){
+                return 5;
+            }else if(palauta(7).equals("")){
+                return 7;   
+            }    
+        }else if(palauta(4).equals("X")){
+            if(palauta(1).equals("X")&&palauta(7).equals("0")){
+               if(palauta(6).equals("")){
+                return 6; 
+               }
+            }if(palauta(7).equals("X")&&palauta(1).equals("0")){
+               if(palauta(0).equals("")){
+                return 0; 
+               }
+            }if(palauta(5).equals("X")&&palauta(3).equals("0")){
+               if(palauta(6).equals("")){
+                return 6;
+               }
+            }if(palauta(3).equals("X")&&palauta(5).equals("0")){
+               if(palauta(6).equals("")){
+                return 2;
+               }
+            }if(palauta(0).equals("X")&&palauta(8).equals("0")){
+               if(palauta(6).equals("")){
+                return 2;
+               }
+            }if(palauta(8).equals("X")&&palauta(0).equals("0")){
+               if(palauta(6).equals("")){
+                return 2;
+               }
+            }if(palauta(6).equals("X")&&palauta(2).equals("0")){
+               if(palauta(6).equals("")){
+                return 8;
+               }
+            }if(palauta(2).equals("X")&&palauta(6).equals("0")){
+               if(palauta(6).equals("")){
+                return 8;
+               }
+            }if(peli.getMoneskoVuoro()==1){
+                return 0;
+            }
+            
+        }         
+        
+        
+    return -1;
     }
 }

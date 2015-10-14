@@ -80,7 +80,7 @@ public class Tekoaly {
             return 3;
         } else if (palauta(0).equals("0") && palauta(8).equals("0") && palauta(4).equals("")) {
             return 4;
-        } else if (palauta(1).equals("0") && palauta(7).equals("") && palauta(4).equals("")) {
+        } else if (palauta(1).equals("0") && palauta(7).equals("0") && palauta(4).equals("")) {
             return 4;
         } else if (palauta(2).equals("0") && palauta(6).equals("0") && palauta(4).equals("")) {
             return 4;

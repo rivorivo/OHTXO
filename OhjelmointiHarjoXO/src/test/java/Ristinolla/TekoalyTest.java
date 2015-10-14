@@ -21,16 +21,12 @@ public class TekoalyTest {
     public String[] pelilauta;
     public Logiikka peli;
     public Tekoaly tekis;
-    Integer[] ruudut;
+    public int[][] vaakarivit = {{0,1,2},{3,4,5},{6,7,8}};
     
     public TekoalyTest() {
         pelilauta = new String[8];
         peli = new Logiikka(pelilauta);
-        tekis = new Tekoaly(peli);
-        ruudut= new Integer[8];        
-        for (int i = 0; i < ruudut.length; i++) {
-           ruudut[i]=i+1;            
-        }
+        tekis = new Tekoaly(peli);     
         
     }
     
@@ -64,7 +60,7 @@ public class TekoalyTest {
         
         int arvo=tekis.satunnainen();
         boolean onko=false;
-        for (int i = 0; i < ruudut.length; i++) {
+        for (int i = 0; i < 9; i++) {
             if(i==arvo){
                 onko=true;
             }
@@ -93,26 +89,202 @@ public class TekoalyTest {
     /**
      * Test of siirto method, of class Tekoaly.
      */
+    public void ekaPystyRiviTayteen(){
+        for (int[] is : vaakarivit) {
+            peli.teeSiirto(is[0]);
+        } 
+    }
+    public void kolmasPystyRiviTayteen(){
+       for (int[] is : vaakarivit) {
+            peli.teeSiirto(is[2]);
+        }  
+    }
     @Test
-    public void blokkaaJoitakin1() {
+    public void osaaSuoria(){      
+        ekaPystyRiviTayteen();       
+        peli.teeSiirto(4);
+        peli.teeSiirto(2);
+        assertEquals(tekis.siirto(),5);       
+        peli.uusiPeli();
+        ekaPystyRiviTayteen();  
+        peli.teeSiirto(2);
+        peli.teeSiirto(7);
+        assertEquals(tekis.siirto(),8);
+        peli.uusiPeli();
+        ekaPystyRiviTayteen();
+        peli.teeSiirto(7);
+        peli.teeSiirto(1);
+        assertEquals(tekis.siirto(),2);
+    }
+  
+    @Test
+    public void osaaSuoria2(){
+        kolmasPystyRiviTayteen();
+        peli.teeSiirto(4);
+        peli.teeSiirto(1);
+        assertEquals(tekis.siirto(),3);
+        peli.uusiPeli();
+        kolmasPystyRiviTayteen();
+        peli.teeSiirto(1);
+        peli.teeSiirto(7);
+        assertEquals(tekis.siirto(),6);
+        peli.uusiPeli();
+        kolmasPystyRiviTayteen();
+        peli.teeSiirto(7);
+        peli.teeSiirto(1);
+        assertEquals(tekis.siirto(),0);
+    }
+    @Test
+    public void blokkaa1() {
         peli.teeSiirto(0);
         peli.teeSiirto(4);
         peli.teeSiirto(1);
         assertEquals(tekis.siirto(),2);
     }
      @Test
-    public void blokkaaJoitakin2() {
+    public void blokkaa2() {
         peli.teeSiirto(4);
         peli.teeSiirto(2);
         peli.teeSiirto(3);
         assertEquals(tekis.siirto(),5);
     }
-     @Test
-    public void blokkaaJoitakin3() {
+    @Test
+    public void blokkaa3() {
         peli.teeSiirto(8);
         peli.teeSiirto(3);
         peli.teeSiirto(5);
         assertEquals(tekis.siirto(),2);
+    }
+    @Test
+    public void blokkaa4(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(1);
+        peli.teeSiirto(3);
+        assertEquals(tekis.siirto(),6);
+    }
+     @Test
+    public void blokkaa5(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(1);
+        peli.teeSiirto(4);
+        assertEquals(tekis.siirto(),8);
+    }
+     @Test
+    public void blokkaa6(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(0);
+        peli.teeSiirto(4);
+        assertEquals(tekis.siirto(),7);
+    }
+     @Test
+    public void blokkaa7(){
+        peli.teeSiirto(2);
+        peli.teeSiirto(1);
+        peli.teeSiirto(4);
+        assertEquals(tekis.siirto(),6);
+    }
+     @Test
+    public void blokkaa8(){
+        peli.teeSiirto(2);
+        peli.teeSiirto(4);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),8);
+    }
+     @Test
+    public void blokkaa9(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(4);
+        peli.teeSiirto(2);
+        assertEquals(tekis.siirto(),1);
+    }
+     @Test
+    public void blokkaa10(){
+        peli.teeSiirto(8);
+        peli.teeSiirto(4);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),7);
+    }
+     @Test
+    public void blokkaa11(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(4);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),3);
+    }
+     @Test
+    public void blokkaa12(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(3);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void blokkaa13(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(3);
+        peli.teeSiirto(7);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void blokkaa14(){
+        peli.teeSiirto(2);
+        peli.teeSiirto(3);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void blokkaa15(){
+        peli.teeSiirto(2);
+        peli.teeSiirto(4);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),5);
+    }
+     @Test
+    public void blokkaa16(){
+        peli.teeSiirto(3);
+        peli.teeSiirto(8);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void blokkaa17(){
+        peli.teeSiirto(3);
+        peli.teeSiirto(4);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),0);
+    }
+     @Test
+    public void blokkaa18(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(3);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),0);
+    }
+     @Test
+    public void blokkaa19(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(0);
+        peli.teeSiirto(7);
+        assertEquals(tekis.siirto(),1);
+    }
+     @Test
+    public void blokkaa20(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(2);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),3);
+    }
+     @Test
+    public void blokkaa21(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(3);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),2);
+    }
+     @Test
+    public void laittaaTyhjaan4(){
+        peli.teeSiirto(2);        
+        assertEquals(tekis.siirto(),4);
     }
     
     @Test
@@ -142,7 +314,178 @@ public class TekoalyTest {
         peli.teeSiirto(5);
         assertEquals(tekis.siirto(),6);
     }
-    
+     @Test
+    public void hyokkaa4(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(0);
+        peli.teeSiirto(8);
+        peli.teeSiirto(1);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),2);
+    }
+     @Test
+    public void hyokkaa5(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(0);
+        peli.teeSiirto(8);
+        peli.teeSiirto(3);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),6);
+    }
+      @Test
+    public void hyokkaa6(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(0);
+        peli.teeSiirto(5);
+        peli.teeSiirto(4);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),8);
+    }
+      @Test
+    public void hyokkaa7(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(2);
+        peli.teeSiirto(8);
+        peli.teeSiirto(4);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),6);
+    }
+      @Test
+    public void hyokkaa8(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(2);
+        peli.teeSiirto(0);
+        peli.teeSiirto(5);
+        peli.teeSiirto(3);
+        assertEquals(tekis.siirto(),8);
+    }
+      @Test
+    public void hyokkaa9(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(6);
+        peli.teeSiirto(2);
+        peli.teeSiirto(7);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),8);
+    }
+      @Test
+    public void hyokkaa10(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(8);
+        peli.teeSiirto(2);
+        peli.teeSiirto(7);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),6);
+    }
    
+      @Test
+    public void hyokkaa11(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(8);
+        peli.teeSiirto(2);
+        peli.teeSiirto(6);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),7);
+    }
+      @Test
+    public void hyokkaa12(){
+        peli.teeSiirto(4);
+        peli.teeSiirto(0);
+        peli.teeSiirto(2);
+        peli.teeSiirto(6);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),3);
+    }
 
+    @Test
+    public void hyokkaa13(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(0);
+        peli.teeSiirto(7);
+        peli.teeSiirto(8);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void hyokkaa14(){
+        peli.teeSiirto(0);
+        peli.teeSiirto(1);
+        peli.teeSiirto(6);
+        peli.teeSiirto(7);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void hyokkaa15(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(2);
+        peli.teeSiirto(7);
+        peli.teeSiirto(6);
+        peli.teeSiirto(5);
+        assertEquals(tekis.siirto(),4);
+    }
+     @Test
+    public void hyokkaa16(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(2);
+        peli.teeSiirto(7);
+        peli.teeSiirto(8);
+        peli.teeSiirto(3);
+        assertEquals(tekis.siirto(),5);
+    }
+    
+    @Test
+    public void hyokkaa17(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(3);
+        peli.teeSiirto(7);
+        peli.teeSiirto(5);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),4); 
+    }
+     @Test
+    public void hyokkaa18(){
+        peli.teeSiirto(5);
+        peli.teeSiirto(1);
+        peli.teeSiirto(7);
+        peli.teeSiirto(2);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),0); 
+    }
+     @Test
+    public void hyokkaa19(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(3);
+        peli.teeSiirto(7);
+        peli.teeSiirto(6);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),0); 
+    }
+     @Test
+    public void hyokkaa20(){
+        peli.teeSiirto(2);
+        peli.teeSiirto(4);
+        peli.teeSiirto(6);
+        peli.teeSiirto(7);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),1); 
+    }
+     @Test
+    public void hyokkaa21(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(8);
+        peli.teeSiirto(7);
+        peli.teeSiirto(5);
+        peli.teeSiirto(6);
+        assertEquals(tekis.siirto(),2); 
+    }
+     @Test
+    public void hyokkaa22(){
+        peli.teeSiirto(1);
+        peli.teeSiirto(4);
+        peli.teeSiirto(7);
+        peli.teeSiirto(6);
+        peli.teeSiirto(8);
+        assertEquals(tekis.siirto(),2); 
+    }
 }
